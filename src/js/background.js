@@ -5,6 +5,8 @@ import { listen } from './lib/messaging';
 import { removeComments, firstJSONCharIndex } from './lib/utilities';
 import { jsonStringToHTML } from './lib/dom-builder';
 
+import string from '../sass/content.scss';
+
 // Record current version (in case a future update wants to know)
 browser.storage.local.set({appVersion: browser.runtime.getManifest().version});
 
@@ -39,7 +41,7 @@ listen((port, msg) => {
 
       // Get the substring up to the first "(", with any comments/whitespace stripped out
       const firstBit = removeComments(text.substring(0, indexOfParen)).trim();
-      if (!firstBit.match(/^[a-zA-Z_$][\.\[\]'"0-9a-zA-Z_$]*$/)) {
+      if (!firstBit.match(/^[a-zA-Z_$][.\[\]'"0-9a-zA-Z_$]*$/)) {
         // The 'firstBit' is NOT a valid function identifier.
         port.postMessage(['NOT JSON', 'first bit not a valid function name']);
         port.disconnect();
@@ -80,14 +82,14 @@ listen((port, msg) => {
     }
 
     // If still running, we now have obj, which is valid JSON.
-    browser.tabs.insertCSS(tab.id, {code: require('../sass/content.scss')});
+    browser.tabs.insertCSS(tab.id, {code: string});
 
     // Ensure it's not a number or string (technically valid JSON, but no point prettifying it)
     if (typeof obj !== 'object') {
       port.postMessage(['NOT JSON', 'technically JSON but not an object or array']);
       port.disconnect();
       return;
-    } 
+    }
     // If there's an empty object or array, return JSON as is
     else if (Object.entries(obj).length === 0 || obj.length === 0) {
       port.postMessage(['NOT JSON', 'empty object or array']);

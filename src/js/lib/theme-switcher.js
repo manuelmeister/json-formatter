@@ -1,7 +1,7 @@
 import {themes} from './themes';
 import {connect} from "./messaging";
 
-const transitionStyles = require('../../sass/transition.scss');
+import string from '../../sass/transition.scss';
 let port, transitionStylesInject;
 
 export function enableTheming() {
@@ -85,7 +85,7 @@ function insertTransitionStylesOnce() {
     window.setTimeout(() => {
       port.postMessage({
         type: 'INSERT CSS',
-        code: transitionStyles
+        code: string
       });
     }, 1000);
   }

@@ -27,7 +27,7 @@ Installation
 
 1. Clone/download this repo
 2. Install dependencies using [NPM](https://nodejs.org/) or [Yarn](https://yarnpkg.com/en/).
-3. Build the extension: `gulp build:dist`
+3. Build the extension: `yarn build`
 4. Side-load the extension in your browser as per below
 
 Chrome

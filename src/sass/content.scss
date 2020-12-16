@@ -19,7 +19,8 @@ body {
   display: block;
   position: absolute;
   top: 0.7rem;
-  font: 13px "Lucida Grande", "Segoe UI", "Tahoma";
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   button, select {
     border-radius: 0.1rem;
@@ -156,24 +157,24 @@ pre {
   float: left;
   margin-left: -1.05rem;
   margin-right: 0.25rem;
-  font-size: 24px;
   z-index: 5;
   opacity: 0.15;
   cursor: pointer;
 
   &:before {
     display: inline;
-    content: '▾';
+    content: "\25BC";
     user-select: none;
   }
 
   .collapsed > &:before {
-    content: '▸';
+    content: "\25B6";
   }
 
   &:hover {
     opacity: 0.35;
   }
+
   &:active {
     opacity: 0.5;
   }
@@ -194,7 +195,8 @@ pre {
 /* SYNTAX HIGHLIGHTING */
 
 #formattedJson, #jsonpOpener, #jsonpCloser, pre {
-  font: 13px/1.1rem monospace;
+  font-size: 13px;
+  font-family: monospace;
 }
 
 .string {
@@ -211,7 +213,7 @@ a:hover, a:active {
 }
 
 #formattingMsg {
-  font: 13px "Lucida Grande", "Segoe UI", "Tahoma";
+  font-size: 13px;
   padding: 0.6rem 0 0 0.5rem;
   margin: 0;
 }
@@ -243,10 +245,6 @@ span {
 
 #spinner {
   animation: spin 2s infinite;
-}
-
-* {
-  font-smoothing: antialiased;
 }
 
 @import 'themes/all';
