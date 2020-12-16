@@ -1,0 +1,56 @@
+body.theme-jetbrainsDark {
+  $foreground: #A9B7C6;
+
+  background-color: #353535;
+  font-family: "JetBrains Mono", "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
+  color: $foreground;
+
+  ::selection {
+    background-color: #2b4b89;
+  }
+
+  .blockInner {
+    border-color: #555555;
+  }
+
+  .number {
+    color: #6897BB;
+  }
+
+  .key {
+    color: #9876AA;
+  }
+
+  .string {
+    color: #6A8759;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.1em;
+    text-decoration-color: rgba(106, 135, 89, 0.45);
+    &:hover {
+      text-decoration-color: #6A8759;
+    }
+  }
+
+  .bool, .null {
+    color: #CC7832;
+  }
+
+  .brace {
+    color: $foreground;
+  }
+
+  #gutter {
+    background: #3b3d3e;
+  }
+
+  [line-number]:before {
+    color: #676a6d;
+  }
+
+  .collapsed:after {
+    color: #808080;
+  }
+}
