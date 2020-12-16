@@ -1,0 +1,57 @@
+body.theme-jetbrainsLight {
+  $foreground: black;
+
+  background-color: white;
+  font-family: "JetBrains Mono", "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
+  color: $foreground;
+
+  ::selection {
+    background-color: #617aaf;
+    color: #fff;
+  }
+
+  .number {
+    color: #00F;
+  }
+
+  .key {
+    color: #660e7a;
+    font-weight: bold;
+  }
+
+  .string {
+    color: #008000;
+    font-weight: bold;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.1em;
+    text-decoration-color: rgba(0, 128, 0, 0.2);
+    &:hover {
+      text-decoration-color: rgba(0, 128, 0);
+    }
+  }
+
+  .bool, .null {
+    color: #000080;
+    font-weight: bold;
+  }
+
+  .brace {
+    color: $foreground;
+  }
+
+  #gutter {
+    background: #e8e8e8;
+  }
+
+  [line-number]:before {
+    color: #aaa;
+  }
+
+  .collapsed:after {
+    color: #808080;
+    font-style: italic;
+  }
+}

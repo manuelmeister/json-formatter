@@ -32,6 +32,10 @@ export const themes = {
     name: 'iPlastic',
     type: 'Light'
   },
+  jetbrainsLight: {
+    name: 'JetBrains Light',
+    type: 'Light'
+  },
   katzenMilch: {
     name: 'KatzenMilch',
     type: 'Light'
